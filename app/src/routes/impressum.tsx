@@ -10,12 +10,21 @@ export const Route = createFileRoute("/impressum")({
   component: ImpressumPage,
 });
 
-function Row({ label, value }: { label: string; value: string }) {
+function Row({ label, value, href }: { label: string; value: string; href?: string }) {
   if (!value) return null;
+  const external = href?.startsWith("http");
   return (
     <div className="grid gap-1 py-3 sm:grid-cols-[180px_1fr]">
       <dt className="text-sm font-semibold text-ink-3">{label}</dt>
-      <dd>{value}</dd>
+      <dd>
+        {href ? (
+          <a href={href} {...(external ? { target: "_blank", rel: "noopener" } : {})} className="font-medium text-wald underline underline-offset-4 hover:text-rot">
+            {value}
+          </a>
+        ) : (
+          value
+        )}
+      </dd>
     </div>
   );
 }
@@ -46,17 +55,17 @@ function ImpressumPage() {
         <h1 className="mt-2 text-4xl">Impressum</h1>
         <p className="mt-3 text-ink-2">Offenlegung gemäß § 5 ECG, § 14 UGB und § 25 MedienG.</p>
         <dl className="mt-8 divide-y divide-line rounded-2xl border border-line bg-white px-6">
-          <Row label="Medieninhaber" value={name || "Digital Denker"} />
+          <Row label="Medieninhaber" value={name || "Digital Denker"} href="https://digitaldenker.at" />
           <Row label="Inhaber / Geschäftsführung" value={imp.owner} />
-          <Row label="Anschrift" value={address} />
-          <Row label="Telefon" value={imp.phone} />
-          <Row label="E-Mail" value={imp.email} />
+          <Row label="Anschrift" value={address} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(imp.mapQuery || address)}`} />
+          <Row label="Telefon" value={imp.phone} href={imp.phone ? `tel:${imp.phone.replace(/\s/g, "")}` : undefined} />
+          <Row label="E-Mail" value={imp.email} href={imp.email ? `mailto:${imp.email}` : undefined} />
           <Row label="UID-Nummer" value={imp.uid} />
           <Row label="Firmenbuchnummer" value={imp.fn} />
           <Row label="Firmenbuchgericht" value={imp.court} />
-          <Row label="Aufsichtsbehörde" value={imp.authority} />
+          <Row label="Aufsichtsbehörde" value={imp.authority} href="https://www.wien.gv.at" />
           <Row label="Unternehmensgegenstand" value="Betrieb der Online-Plattform BlogWien.at, Online-Marketing und Werbung" />
-          <Row label="Mitgliedschaft" value="Wirtschaftskammer Wien" />
+          <Row label="Mitgliedschaft" value="Wirtschaftskammer Wien" href="https://www.wko.at/wien" />
         </dl>
         <h2 className="mt-10 text-2xl">Blattlinie</h2>
         <p className="mt-2 text-ink-2">

@@ -107,7 +107,7 @@ export function Footer() {
           <p className="mt-3 text-sm text-paper/70">
             Die offene Blog-Plattform für Wien und Österreich. Schreiben, veröffentlichen, gefunden werden.
           </p>
-          <p className="mt-4 text-xs text-paper/50">Betrieben von Digital Denker e.U., Wattgasse 33, 1160 Wien. Mit KI erstellte Beiträge sind als „KI-generiert“ gekennzeichnet.</p>
+          <p className="mt-4 text-xs text-paper/50">Betrieben von <Link to="/impressum" className="underline underline-offset-4 hover:text-white">Digital Denker e.U., Wattgasse 33, 1160 Wien</Link>. Mit KI erstellte Beiträge sind als „KI-generiert“ gekennzeichnet.</p>
         </div>
         <div>
           <h2 className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-gold">Kategorien</h2>
@@ -181,7 +181,7 @@ export function Footer() {
               <li key={k}>{k}</li>
             ))}
           </ul>
-          <p className="mt-6 text-xs text-paper/40">© {new Date().getFullYear()} BlogWien · Digital Denker e.U. · Wattgasse 33, 1160 Wien</p>
+          <p className="mt-6 text-xs text-paper/40">© {new Date().getFullYear()} BlogWien · <Link to="/impressum" className="underline underline-offset-4 hover:text-white">Impressum: Digital Denker e.U. · Wattgasse 33, 1160 Wien</Link></p>
         </div>
       </div>
     </footer>
