@@ -9,80 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SchreibenRouteImport } from './routes/schreiben'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as PreiseRouteImport } from './routes/preise'
-import { Route as ImpressumRouteImport } from './routes/impressum'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EingereichtRouteImport } from './routes/eingereicht'
-import { Route as DatenschutzRouteImport } from './routes/datenschutz'
-import { Route as AgbRouteImport } from './routes/agb'
-import { Route as AdminRouteImport } from './routes/admin'
-import { Route as SeiteRouteImport } from './routes/$seite'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as KategorieSlugRouteImport } from './routes/kategorie/$slug'
-import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
-import { Route as BildKeyRouteImport } from './routes/bild/$key'
-import { Route as BezahlenOrderIdRouteImport } from './routes/bezahlen/$orderId'
-import { Route as ApiUploadRouteImport } from './routes/api/upload'
-import { Route as ApiSubmitRouteImport } from './routes/api/submit'
+import { Route as SeiteRouteImport } from './routes/$seite'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AgbRouteImport } from './routes/agb'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
+import { Route as EingereichtRouteImport } from './routes/eingereicht'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as PreiseRouteImport } from './routes/preise'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SchreibenRouteImport } from './routes/schreiben'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ApiPayRouteImport } from './routes/api/pay'
-import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
-import { Route as ApiStripeConfirmRouteImport } from './routes/api/stripe/confirm'
-import { Route as ApiStripeCheckoutRouteImport } from './routes/api/stripe/checkout'
-import { Route as ApiRedaktionActionRouteImport } from './routes/api/redaktion/$action'
+import { Route as ApiSubmitRouteImport } from './routes/api/submit'
+import { Route as ApiUploadRouteImport } from './routes/api/upload'
+import { Route as BezahlenOrderIdRouteImport } from './routes/bezahlen/$orderId'
+import { Route as BildKeyRouteImport } from './routes/bild/$key'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as KategorieSlugRouteImport } from './routes/kategorie/$slug'
 import { Route as ApiCronAutopostRouteImport } from './routes/api/cron/autopost'
+import { Route as ApiRedaktionActionRouteImport } from './routes/api/redaktion/$action'
+import { Route as ApiStripeCheckoutRouteImport } from './routes/api/stripe/checkout'
+import { Route as ApiStripeConfirmRouteImport } from './routes/api/stripe/confirm'
+import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchreibenRoute = SchreibenRouteImport.update({
-  id: '/schreiben',
-  path: '/schreiben',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PreiseRoute = PreiseRouteImport.update({
-  id: '/preise',
-  path: '/preise',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImpressumRoute = ImpressumRouteImport.update({
-  id: '/impressum',
-  path: '/impressum',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EingereichtRoute = EingereichtRouteImport.update({
-  id: '/eingereicht',
-  path: '/eingereicht',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DatenschutzRoute = DatenschutzRouteImport.update({
-  id: '/datenschutz',
-  path: '/datenschutz',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AgbRoute = AgbRouteImport.update({
-  id: '/agb',
-  path: '/agb',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SeiteRoute = SeiteRouteImport.update({
@@ -90,44 +45,54 @@ const SeiteRoute = SeiteRouteImport.update({
   path: '/$seite',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
+const AgbRoute = AgbRouteImport.update({
+  id: '/agb',
+  path: '/agb',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KategorieSlugRoute = KategorieSlugRouteImport.update({
-  id: '/kategorie/$slug',
-  path: '/kategorie/$slug',
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const EingereichtRoute = EingereichtRouteImport.update({
+  id: '/eingereicht',
+  path: '/eingereicht',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BildKeyRoute = BildKeyRouteImport.update({
-  id: '/bild/$key',
-  path: '/bild/$key',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BezahlenOrderIdRoute = BezahlenOrderIdRouteImport.update({
-  id: '/bezahlen/$orderId',
-  path: '/bezahlen/$orderId',
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiUploadRoute = ApiUploadRouteImport.update({
-  id: '/api/upload',
-  path: '/api/upload',
+const PreiseRoute = PreiseRouteImport.update({
+  id: '/preise',
+  path: '/preise',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiSubmitRoute = ApiSubmitRouteImport.update({
-  id: '/api/submit',
-  path: '/api/submit',
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchreibenRoute = SchreibenRouteImport.update({
+  id: '/schreiben',
+  path: '/schreiben',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPayRoute = ApiPayRouteImport.update({
@@ -135,19 +100,44 @@ const ApiPayRoute = ApiPayRouteImport.update({
   path: '/api/pay',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiStripeWebhookRoute = ApiStripeWebhookRouteImport.update({
-  id: '/api/stripe/webhook',
-  path: '/api/stripe/webhook',
+const ApiSubmitRoute = ApiSubmitRouteImport.update({
+  id: '/api/submit',
+  path: '/api/submit',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiStripeConfirmRoute = ApiStripeConfirmRouteImport.update({
-  id: '/api/stripe/confirm',
-  path: '/api/stripe/confirm',
+const ApiUploadRoute = ApiUploadRouteImport.update({
+  id: '/api/upload',
+  path: '/api/upload',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiStripeCheckoutRoute = ApiStripeCheckoutRouteImport.update({
-  id: '/api/stripe/checkout',
-  path: '/api/stripe/checkout',
+const BezahlenOrderIdRoute = BezahlenOrderIdRouteImport.update({
+  id: '/bezahlen/$orderId',
+  path: '/bezahlen/$orderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BildKeyRoute = BildKeyRouteImport.update({
+  id: '/bild/$key',
+  path: '/bild/$key',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KategorieSlugRoute = KategorieSlugRouteImport.update({
+  id: '/kategorie/$slug',
+  path: '/kategorie/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCronAutopostRoute = ApiCronAutopostRouteImport.update({
+  id: '/api/cron/autopost',
+  path: '/api/cron/autopost',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRedaktionActionRoute = ApiRedaktionActionRouteImport.update({
@@ -155,9 +145,19 @@ const ApiRedaktionActionRoute = ApiRedaktionActionRouteImport.update({
   path: '/api/redaktion/$action',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCronAutopostRoute = ApiCronAutopostRouteImport.update({
-  id: '/api/cron/autopost',
-  path: '/api/cron/autopost',
+const ApiStripeCheckoutRoute = ApiStripeCheckoutRouteImport.update({
+  id: '/api/stripe/checkout',
+  path: '/api/stripe/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStripeConfirmRoute = ApiStripeConfirmRouteImport.update({
+  id: '/api/stripe/confirm',
+  path: '/api/stripe/confirm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStripeWebhookRoute = ApiStripeWebhookRouteImport.update({
+  id: '/api/stripe/webhook',
+  path: '/api/stripe/webhook',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -357,74 +357,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schreiben': {
-      id: '/schreiben'
-      path: '/schreiben'
-      fullPath: '/schreiben'
-      preLoaderRoute: typeof SchreibenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/preise': {
-      id: '/preise'
-      path: '/preise'
-      fullPath: '/preise'
-      preLoaderRoute: typeof PreiseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/impressum': {
-      id: '/impressum'
-      path: '/impressum'
-      fullPath: '/impressum'
-      preLoaderRoute: typeof ImpressumRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eingereicht': {
-      id: '/eingereicht'
-      path: '/eingereicht'
-      fullPath: '/eingereicht'
-      preLoaderRoute: typeof EingereichtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/datenschutz': {
-      id: '/datenschutz'
-      path: '/datenschutz'
-      fullPath: '/datenschutz'
-      preLoaderRoute: typeof DatenschutzRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agb': {
-      id: '/agb'
-      path: '/agb'
-      fullPath: '/agb'
-      preLoaderRoute: typeof AgbRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$seite': {
@@ -434,60 +371,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SeiteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
+    '/agb': {
+      id: '/agb'
+      path: '/agb'
+      fullPath: '/agb'
+      preLoaderRoute: typeof AgbRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/kategorie/$slug': {
-      id: '/kategorie/$slug'
-      path: '/kategorie/$slug'
-      fullPath: '/kategorie/$slug'
-      preLoaderRoute: typeof KategorieSlugRouteImport
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/eingereicht': {
+      id: '/eingereicht'
+      path: '/eingereicht'
+      fullPath: '/eingereicht'
+      preLoaderRoute: typeof EingereichtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bild/$key': {
-      id: '/bild/$key'
-      path: '/bild/$key'
-      fullPath: '/bild/$key'
-      preLoaderRoute: typeof BildKeyRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bezahlen/$orderId': {
-      id: '/bezahlen/$orderId'
-      path: '/bezahlen/$orderId'
-      fullPath: '/bezahlen/$orderId'
-      preLoaderRoute: typeof BezahlenOrderIdRouteImport
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/upload': {
-      id: '/api/upload'
-      path: '/api/upload'
-      fullPath: '/api/upload'
-      preLoaderRoute: typeof ApiUploadRouteImport
+    '/preise': {
+      id: '/preise'
+      path: '/preise'
+      fullPath: '/preise'
+      preLoaderRoute: typeof PreiseRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/submit': {
-      id: '/api/submit'
-      path: '/api/submit'
-      fullPath: '/api/submit'
-      preLoaderRoute: typeof ApiSubmitRouteImport
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schreiben': {
+      id: '/schreiben'
+      path: '/schreiben'
+      fullPath: '/schreiben'
+      preLoaderRoute: typeof SchreibenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/pay': {
@@ -497,25 +448,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPayRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/stripe/webhook': {
-      id: '/api/stripe/webhook'
-      path: '/api/stripe/webhook'
-      fullPath: '/api/stripe/webhook'
-      preLoaderRoute: typeof ApiStripeWebhookRouteImport
+    '/api/submit': {
+      id: '/api/submit'
+      path: '/api/submit'
+      fullPath: '/api/submit'
+      preLoaderRoute: typeof ApiSubmitRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/stripe/confirm': {
-      id: '/api/stripe/confirm'
-      path: '/api/stripe/confirm'
-      fullPath: '/api/stripe/confirm'
-      preLoaderRoute: typeof ApiStripeConfirmRouteImport
+    '/api/upload': {
+      id: '/api/upload'
+      path: '/api/upload'
+      fullPath: '/api/upload'
+      preLoaderRoute: typeof ApiUploadRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/stripe/checkout': {
-      id: '/api/stripe/checkout'
-      path: '/api/stripe/checkout'
-      fullPath: '/api/stripe/checkout'
-      preLoaderRoute: typeof ApiStripeCheckoutRouteImport
+    '/bezahlen/$orderId': {
+      id: '/bezahlen/$orderId'
+      path: '/bezahlen/$orderId'
+      fullPath: '/bezahlen/$orderId'
+      preLoaderRoute: typeof BezahlenOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bild/$key': {
+      id: '/bild/$key'
+      path: '/bild/$key'
+      fullPath: '/bild/$key'
+      preLoaderRoute: typeof BildKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kategorie/$slug': {
+      id: '/kategorie/$slug'
+      path: '/kategorie/$slug'
+      fullPath: '/kategorie/$slug'
+      preLoaderRoute: typeof KategorieSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cron/autopost': {
+      id: '/api/cron/autopost'
+      path: '/api/cron/autopost'
+      fullPath: '/api/cron/autopost'
+      preLoaderRoute: typeof ApiCronAutopostRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/redaktion/$action': {
@@ -525,11 +511,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiRedaktionActionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/cron/autopost': {
-      id: '/api/cron/autopost'
-      path: '/api/cron/autopost'
-      fullPath: '/api/cron/autopost'
-      preLoaderRoute: typeof ApiCronAutopostRouteImport
+    '/api/stripe/checkout': {
+      id: '/api/stripe/checkout'
+      path: '/api/stripe/checkout'
+      fullPath: '/api/stripe/checkout'
+      preLoaderRoute: typeof ApiStripeCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stripe/confirm': {
+      id: '/api/stripe/confirm'
+      path: '/api/stripe/confirm'
+      fullPath: '/api/stripe/confirm'
+      preLoaderRoute: typeof ApiStripeConfirmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stripe/webhook': {
+      id: '/api/stripe/webhook'
+      path: '/api/stripe/webhook'
+      fullPath: '/api/stripe/webhook'
+      preLoaderRoute: typeof ApiStripeWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
